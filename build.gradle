@@ -1,0 +1,36 @@
+group 'com.couchbase.client.demo'
+version '0.1-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = "com.couchbase.client.demo.tap.Main"
+
+
+//jar {
+//    manifest {
+//        attributes 'Main-Class': 'com.couchbase.client.demo.tap.Main'
+//    }
+//}
+
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+//    compile ('com.couchbase.client:couchbase-client:1.4.11'){
+//        exclude group: 'net.spy', module: 'memcached'
+//    }
+//    compile name: 'spymemcached-2.11.3_CBSE_1244'
+
+    compile fileTree(dir: 'libs', include: '*.jar')
+
+    compile 'commons-cli:commons-cli:1.3.1'
+    compile 'commons-codec:commons-codec:1.10'
+    compile 'com.couchbase.client:couchbase-client:1.4.11'
+
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
